@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/psg.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="JS/psg.js"></script>
+    <title>Generátor hesel</title>
+</head>
+
+<body>
+    <div class="psg">
+        <div class="vystup" id="particles-js">
+            <script src="JS/particles.min.js"></script>
+            <script src="JS/app.js"></script>
+            <div class="texts">
+                <div class="text">Vaše vygenerované heslo<br>
+                    <input type="text" id="vystup"><br>
+                    <input type="button" id="cop" value="kopírovat" onclick="copy()"><br>
+                </div>
+
+            </div>
+        </div>
+        <div class="vstup">
+            <div class="box">
+                <p class="text1">Počet znaků: <br><input type="range" id="pocetcisel" min="0" max="50" value="0"
+                        onchange="count(this.value)">
+                <p class="text1" id="count">0</p>
+                </p>
+
+                <p id="count"></p>
+                <div class="under">
+
+                    <div class="text2">abc<br><input type="checkbox" id="mp"></div>
+                    <div class="text2">ABC <br><input type="checkbox" id="Vp"></div>
+                    <div class="text2">123 <br><input type="checkbox" id="numbers"></div>
+                    <div class="text2">Special <br><input type="checkbox" id="znaky"></div>
+
+                </div>
+                <input type="button" value="generuj" id="butn" onclick="
+                document.getElementById('vystup').value=generuj()">
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <p class="copy" id="rok"></p>
+        <script>
+            var d = new Date();
+            document.getElementById("rok").innerHTML = "© Jiří Navrátil" + " " + d.getFullYear();
+        </script>
+    </div>
+
+</body>
+
+</html>
