@@ -1,4 +1,5 @@
 function generuj() {
+    document.getElementById("control").innerHTML = null;
     var pocet = +document.getElementById("pocetcisel").value;
     var mp = document.getElementById("mp").checked;
     var Vp = document.getElementById("Vp").checked;
@@ -65,10 +66,15 @@ function generuj() {
     }
 }
 function copy() {
+
     var copyText = document.getElementById("vystup");
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
+    if (copyText.value.length > 0) {
+        document.getElementById("control").innerHTML = "Heslo bylo úspěšně skopírováno";
+    }
+
 }
 function count(x) {
     document.getElementById("count").innerHTML = x;
