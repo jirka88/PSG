@@ -72,7 +72,7 @@ function copy() {
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
     if (copyText.value.length > 0) {
-        document.getElementById("control").innerHTML = "Heslo bylo úspěšně skopírováno";
+        document.getElementById("control").innerHTML = "Heslo bylo úspěšně zkopírováno";
     }
 
 }
